@@ -150,6 +150,24 @@ $('#robowar').on('click', function () {
     $("#member5 #email").prop("required", false);
 });
 
+$("#robosoccer").on("click", function() {
+  if (!isSignedUp) {
+    notSignedUp();
+    return;
+  }
+  $(".contact100-form-title span").text("Register For RoboWar");
+  $("#member1").css("display", "block");
+  $("#member2").css("display", "block");
+  $("#member3").css("display", "block");
+  $("#member4").css("display", "block");
+  $("#member5").css("display", "block");
+  $("#member1 #email").prop("required", true);
+  $("#member2 #email").prop("required", true);
+  $("#member3 #email").prop("required", true);
+  $("#member4 #email").prop("required", true);
+  $("#member5 #email").prop("required", true);
+});
+
 //coding:
 $("#coderanch").on("click", function () {
     if (!isSignedUp) {
