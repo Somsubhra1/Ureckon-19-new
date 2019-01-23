@@ -111,6 +111,8 @@ document.getElementById('registrationform').addEventListener('submit', submitted
 
 // TODO: Add on click listeners to all buttons
 
+//robotics
+
 $("#roborace").on("click", function() {
     if (!isSignedUp) {
         notSignedUp();
@@ -147,6 +149,205 @@ $('#robowar').on('click', function () {
     $("#member4 #email").prop("required", false);
     $("#member5 #email").prop("required", false);
 });
+
+//coding:
+$("#coderanch").on("click", function () {
+    if (!isSignedUp) {
+        notSignedUp();
+        return;
+    }
+    $(".contact100-form-title span").text('Register For Code Ranch');
+
+    $("#member1").css("display", "block");
+    $("#member2").css("display", "block");
+    $("#member3").css("display", "none");
+    $("#member4").css("display", "none");
+    $("#member5").css("display", "none");
+    $("#member1 #email").prop('required', true);
+    $("#member2 #email").prop('required', true);
+    $("#member3 #email").prop('required', false);
+    $("#member4 #email").prop('required', false);
+    $("#member5 #email").prop('required', false);
+});
+
+$("#codegolf").on("click", function() {
+  if (!isSignedUp) {
+    notSignedUp();
+    return;
+  }
+  $(".contact100-form-title span").text("Register For Code Golf");
+
+  $("#member1").css("display", "block");
+  $("#member2").css("display", "block");
+  $("#member3").css("display", "none");
+  $("#member4").css("display", "none");
+  $("#member5").css("display", "none");
+  $("#member1 #email").prop("required", true);
+  $("#member2 #email").prop("required", true);
+  $("#member3 #email").prop("required", false);
+  $("#member4 #email").prop("required", false);
+  $("#member5 #email").prop("required", false);
+});
+
+$("#codewise").on("click", function () {
+    if (!isSignedUp) {
+        notSignedUp();
+        return;
+    }
+    $(".contact100-form-title span").text("Register For Code Wise");
+
+    $("#member1").css("display", "block");
+    $("#member2").css("display", "block");
+    $("#member3").css("display", "block");
+    $("#member4").css("display", "none");
+    $("#member5").css("display", "none");
+    $("#member1 #email").prop("required", true);
+    $("#member2 #email").prop("required", true);
+    $("#member3 #email").prop("required", true);
+    $("#member4 #email").prop("required", false);
+    $("#member5 #email").prop("required", false);
+});
+
+$("#spyder").on("click", function() {
+  if (!isSignedUp) {
+    notSignedUp();
+    return;
+  }
+  $(".contact100-form-title span").text("Register For Spyder");
+
+  $("#member1").css("display", "block");
+  $("#member2").css("display", "block");
+  $("#member3").css("display", "none");
+  $("#member4").css("display", "none");
+  $("#member5").css("display", "none");
+  $("#member1 #email").prop("required", true);
+  $("#member2 #email").prop("required", true);
+  $("#member3 #email").prop("required", false);
+  $("#member4 #email").prop("required", false);
+  $("#member5 #email").prop("required", false);
+});
+
+// Gaming:
+
+$("#pubg").on("click", function () {
+    if (!isSignedUp) {
+        notSignedUp();
+        return;
+    }
+    $(".contact100-form-title span").text("Register For PUBG");
+
+    $("#member1").css("display", "block");
+    $("#member2").css("display", "block");
+    $("#member3").css("display", "block");
+    $("#member4").css("display", "block");
+    $("#member5").css("display", "none");
+    $("#member1 #email").prop("required", true);
+    $("#member2 #email").prop("required", true);
+    $("#member3 #email").prop("required", true);
+    $("#member4 #email").prop("required", true);
+    $("#member5 #email").prop("required", false);
+});
+
+// mechanical:
+$("#bridgemaking").on("click", function() {
+  if (!isSignedUp) {
+    notSignedUp();
+    return;
+  }
+  $(".contact100-form-title span").text("Register For Bridge Making");
+
+  $("#member1").css("display", "block");
+  $("#member2").css("display", "block");
+  $("#member3").css("display", "block");
+  $("#member4").css("display", "none");
+  $("#member5").css("display", "none");
+  $("#member1 #email").prop("required", true);
+  $("#member2 #email").prop("required", true);
+  $("#member3 #email").prop("required", true);
+  $("#member4 #email").prop("required", false);
+  $("#member5 #email").prop("required", false);
+});
+
+// Flagship:
+$("#uic").on("click", function () {
+    if (!isSignedUp) {
+        notSignedUp();
+        return;
+    }
+    $(".contact100-form-title span").text("Register For UIC");
+
+    $("#member1").css("display", "block");
+    $("#member2").css("display", "block");
+    $("#member3").css("display", "block");
+    $("#member4").css("display", "block");
+    $("#member5").css("display", "block");
+    $("#member1 #email").prop("required", true);
+    $("#member2 #email").prop("required", true);
+    $("#member3 #email").prop("required", true);
+    $("#member4 #email").prop("required", true);
+    $("#member5 #email").prop("required", true);
+});
+
+// business:
+
+$("#getsetsell").on("click", function() {
+  if (!isSignedUp) {
+    notSignedUp();
+    return;
+  }
+  $(".contact100-form-title span").text("Register For Get Set Sell");
+
+  $("#member1").css("display", "block");
+  $("#member2").css("display", "block");
+  $("#member3").css("display", "block");
+  $("#member4").css("display", "block");
+  $("#member5").css("display", "none");
+  $("#member1 #email").prop("required", true);
+  $("#member2 #email").prop("required", true);
+  $("#member3 #email").prop("required", true);
+  $("#member4 #email").prop("required", true);
+  $("#member5 #email").prop("required", false);
+});
+
+$("#admaking").on("click", function () {
+    if (!isSignedUp) {
+        notSignedUp();
+        return;
+    }
+    $(".contact100-form-title span").text("Register For Ad making");
+
+    $("#member1").css("display", "block");
+    $("#member2").css("display", "block");
+    $("#member3").css("display", "block");
+    $("#member4").css("display", "block");
+    $("#member5").css("display", "none");
+    $("#member1 #email").prop("required", true);
+    $("#member2 #email").prop("required", true);
+    $("#member3 #email").prop("required", true);
+    $("#member4 #email").prop("required", true);
+    $("#member5 #email").prop("required", false);
+});
+
+// misc:
+$("#cluex").on("click", function() {
+  if (!isSignedUp) {
+    notSignedUp();
+    return;
+  }
+  $(".contact100-form-title span").text("Register For ClueX");
+
+  $("#member1").css("display", "block");
+  $("#member2").css("display", "block");
+  $("#member3").css("display", "none");
+  $("#member4").css("display", "none");
+  $("#member5").css("display", "none");
+  $("#member1 #email").prop("required", true);
+  $("#member2 #email").prop("required", true);
+  $("#member3 #email").prop("required", false);
+  $("#member4 #email").prop("required", false);
+  $("#member5 #email").prop("required", false);
+});
+
 
 // not signed up
 
