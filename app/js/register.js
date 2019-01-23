@@ -8,6 +8,15 @@ var isSignedUp = true; // GET USER SIGNED UP STATUS FROM DATABASE
 
 // ********* BACKEND DEVELOPER CONFIGURATION ENDS: *********
 
+var events = {
+    roborace: 5,
+    robowar: 3,
+};
+
+var idName = "";
+
+var count = 1;
+
 document.getElementById('registrationform').addEventListener('submit', submitted);
 
 (function ($) {
@@ -90,6 +99,8 @@ document.getElementById('registrationform').addEventListener('submit', submitted
     [ Show / hide contact ]*/
     $('.btn-hide-contact100').on('click', function () {       
         $(".container-contact100").fadeOut(300);
+        count = 1;
+        idName = "";
     });
 
     $('.btn-show-contact100').on('click', function () {
@@ -119,17 +130,42 @@ $("#roborace").on("click", function() {
         return;
     }
     $(".contact100-form-title span").text('Register For RoboRace');
-    
-    $("#member1").css("display", "block");
-    $("#member2").css("display", "block");
-    $("#member3").css("display", "none");
-    $("#member4").css("display", "none");
-    $("#member5").css("display", "none");
-    $("#member1 #email").prop('required', true);
-    $("#member2 #email").prop('required', true);
-    $("#member3 #email").prop('required', false);
-    $("#member4 #email").prop('required', false);
-    $("#member5 #email").prop('required', false);
+
+    $('#addmember').on('click', function () { 
+        if (count <= events.roborace) {
+            count++;
+            idName = "member" + count;
+            document.getElementById(idName).style.display = "block";
+        } 
+        if (count >= 1 && count <= event.roborace) {
+            document.getElementById("addmember").disabled = false;
+            document.getElementById("delmember").disabled = false;
+        }
+        if (count === events.roborace) {
+            document.getElementById('addmember').disabled = true;
+            document.getElementById('delmember').disabled = false;
+        }
+        // console.log(count);
+        
+        
+    })
+    $('#delmember').on('click', function () {
+        if (count >= 1) {
+            idName = "member" + count;
+            document.getElementById(idName).style.display = "none";
+            count--;
+        }
+        if (count >= 1 && count <= event.roborace) {
+          document.getElementById("addmember").disabled = false;
+          document.getElementById("delmember").disabled = false;
+        }
+        if (count === 0) {
+            document.getElementById("addmember").disabled = false;            
+            document.getElementById("delmember").disabled = true;            
+        }
+        // console.log(count);
+        
+    })
 });
 
 $('#robowar').on('click', function () {
@@ -138,16 +174,42 @@ $('#robowar').on('click', function () {
         return;
     }
     $(".contact100-form-title span").text("Register For RoboWar");
-    $('#member1').css('display', 'block');
-    $('#member2').css('display', 'block');
-    $('#member3').css('display', 'block');
-    $('#member4').css('display', 'none');
-    $('#member5').css('display', 'none');
-    $("#member1 #email").prop("required", true);
-    $("#member2 #email").prop("required", true);
-    $("#member3 #email").prop("required", true);
-    $("#member4 #email").prop("required", false);
-    $("#member5 #email").prop("required", false);
+
+    $('#addmember').on('click', function () {
+        if (count <= events.robowar) {
+            count++;
+            idName = "member" + count;
+            document.getElementById(idName).style.display = "block";
+        }
+        if (count >= 1 && count <= event.robowar) {
+            document.getElementById("addmember").disabled = false;
+            document.getElementById("delmember").disabled = false;
+        }
+        if (count === events.robowar) {
+            document.getElementById('addmember').disabled = true;
+            document.getElementById('delmember').disabled = false;
+        }
+        // console.log(count);
+
+
+    })
+    $('#delmember').on('click', function () {
+        if (count >= 1) {
+            idName = "member" + count;
+            document.getElementById(idName).style.display = "none";
+            count--;
+        }
+        if (count >= 1 && count <= event.robowar) {
+            document.getElementById("addmember").disabled = false;
+            document.getElementById("delmember").disabled = false;
+        }
+        if (count === 0) {
+            document.getElementById("addmember").disabled = false;
+            document.getElementById("delmember").disabled = true;
+        }
+        // console.log(count);
+
+    })
 });
 
 $("#robosoccer").on("click", function() {
@@ -155,7 +217,7 @@ $("#robosoccer").on("click", function() {
     notSignedUp();
     return;
   }
-  $(".contact100-form-title span").text("Register For RoboWar");
+  $(".contact100-form-title span").text("Register For Soccer");
   $("#member1").css("display", "block");
   $("#member2").css("display", "block");
   $("#member3").css("display", "block");
