@@ -9,8 +9,19 @@ var isSignedUp = true; // GET USER SIGNED UP STATUS FROM DATABASE
 // ********* BACKEND DEVELOPER CONFIGURATION ENDS: *********
 
 var events = {
-    roborace: 5,
-    robowar: 3,
+    // roborace: 5,
+    // robowar: 3,
+    robosoccer: 5,
+    roborumble: 5,
+    bridgemaking: 3,
+    getsetsell: 4,
+    admaking: 4,
+    spyder: 2,
+    codegolf: 2,
+    coderanch: 2,
+    pubg: 4,
+    cluex: 2,
+    uic: 5,
 };
 
 var idName = "";
@@ -159,7 +170,7 @@ $("#roborace").on("click", function() {
           document.getElementById("addmember").disabled = false;
           document.getElementById("delmember").disabled = false;
         }
-        if (count === 0) {
+        if (count === 1) {
             document.getElementById("addmember").disabled = false;            
             document.getElementById("delmember").disabled = true;            
         }
@@ -203,7 +214,7 @@ $('#robowar').on('click', function () {
             document.getElementById("addmember").disabled = false;
             document.getElementById("delmember").disabled = false;
         }
-        if (count === 0) {
+        if (count === 1) {
             document.getElementById("addmember").disabled = false;
             document.getElementById("delmember").disabled = true;
         }
@@ -217,17 +228,39 @@ $("#robosoccer").on("click", function() {
     notSignedUp();
     return;
   }
-  $(".contact100-form-title span").text("Register For Soccer");
-  $("#member1").css("display", "block");
-  $("#member2").css("display", "block");
-  $("#member3").css("display", "block");
-  $("#member4").css("display", "block");
-  $("#member5").css("display", "block");
-  $("#member1 #email").prop("required", true);
-  $("#member2 #email").prop("required", true);
-  $("#member3 #email").prop("required", true);
-  $("#member4 #email").prop("required", true);
-  $("#member5 #email").prop("required", true);
+  $(".contact100-form-title span").text("Register For Robo Soccer");
+    $("#addmember").on("click", function() {
+      if (count <= events.robosoccer) {
+        count++;
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "block";
+      }
+      if (count >= 1 && count <= event.robosoccer) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === events.robosoccer) {
+        document.getElementById("addmember").disabled = true;
+        document.getElementById("delmember").disabled = false;
+      }
+      // console.log(count);
+    });
+    $("#delmember").on("click", function() {
+      if (count >= 1) {
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "none";
+        count--;
+      }
+      if (count >= 1 && count <= event.robosoccer) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === 1) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = true;
+      }
+      // console.log(count);
+    });
 });
 
 //coding:
@@ -238,16 +271,38 @@ $("#coderanch").on("click", function () {
     }
     $(".contact100-form-title span").text('Register For Code Ranch');
 
-    $("#member1").css("display", "block");
-    $("#member2").css("display", "block");
-    $("#member3").css("display", "none");
-    $("#member4").css("display", "none");
-    $("#member5").css("display", "none");
-    $("#member1 #email").prop('required', true);
-    $("#member2 #email").prop('required', true);
-    $("#member3 #email").prop('required', false);
-    $("#member4 #email").prop('required', false);
-    $("#member5 #email").prop('required', false);
+    $("#addmember").on("click", function() {
+      if (count <= events.coderanch) {
+        count++;
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "block";
+      }
+      if (count >= 1 && count <= event.coderanch) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === events.coderanch) {
+        document.getElementById("addmember").disabled = true;
+        document.getElementById("delmember").disabled = false;
+      }
+      // console.log(count);
+    });
+    $("#delmember").on("click", function() {
+      if (count >= 1) {
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "none";
+        count--;
+      }
+      if (count >= 1 && count <= event.coderanch) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === 1) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = true;
+      }
+      // console.log(count);
+    });
 });
 
 $("#codegolf").on("click", function() {
@@ -257,35 +312,38 @@ $("#codegolf").on("click", function() {
   }
   $(".contact100-form-title span").text("Register For Code Golf");
 
-  $("#member1").css("display", "block");
-  $("#member2").css("display", "block");
-  $("#member3").css("display", "none");
-  $("#member4").css("display", "none");
-  $("#member5").css("display", "none");
-  $("#member1 #email").prop("required", true);
-  $("#member2 #email").prop("required", true);
-  $("#member3 #email").prop("required", false);
-  $("#member4 #email").prop("required", false);
-  $("#member5 #email").prop("required", false);
-});
-
-$("#codewise").on("click", function () {
-    if (!isSignedUp) {
-        notSignedUp();
-        return;
-    }
-    $(".contact100-form-title span").text("Register For Code Wise");
-
-    $("#member1").css("display", "block");
-    $("#member2").css("display", "block");
-    $("#member3").css("display", "block");
-    $("#member4").css("display", "none");
-    $("#member5").css("display", "none");
-    $("#member1 #email").prop("required", true);
-    $("#member2 #email").prop("required", true);
-    $("#member3 #email").prop("required", true);
-    $("#member4 #email").prop("required", false);
-    $("#member5 #email").prop("required", false);
+    $("#addmember").on("click", function() {
+      if (count <= events.codegolf) {
+        count++;
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "block";
+      }
+      if (count >= 1 && count <= event.codegolf) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === events.codegolf) {
+        document.getElementById("addmember").disabled = true;
+        document.getElementById("delmember").disabled = false;
+      }
+      // console.log(count);
+    });
+    $("#delmember").on("click", function() {
+      if (count >= 1) {
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "none";
+        count--;
+      }
+      if (count >= 1 && count <= event.codegolf) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === 1) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = true;
+      }
+      // console.log(count);
+    });
 });
 
 $("#spyder").on("click", function() {
@@ -293,18 +351,40 @@ $("#spyder").on("click", function() {
     notSignedUp();
     return;
   }
-  $(".contact100-form-title span").text("Register For Spyder");
-
-  $("#member1").css("display", "block");
-  $("#member2").css("display", "block");
-  $("#member3").css("display", "none");
-  $("#member4").css("display", "none");
-  $("#member5").css("display", "none");
-  $("#member1 #email").prop("required", true);
-  $("#member2 #email").prop("required", true);
-  $("#member3 #email").prop("required", false);
-  $("#member4 #email").prop("required", false);
-  $("#member5 #email").prop("required", false);
+    $(".contact100-form-title span").text("Register For Spyder");
+    
+    $("#addmember").on("click", function() {
+      if (count <= events.spyder) {
+        count++;
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "block";
+      }
+      if (count >= 1 && count <= event.spyder) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === events.spyder) {
+        document.getElementById("addmember").disabled = true;
+        document.getElementById("delmember").disabled = false;
+      }
+      // console.log(count);
+    });
+    $("#delmember").on("click", function () {
+        if (count >= 1) {
+            idName = "member" + count;
+            document.getElementById(idName).style.display = "none";
+            count--;
+        }
+        if (count >= 1 && count <= event.spyder) {
+            document.getElementById("addmember").disabled = false;
+            document.getElementById("delmember").disabled = false;
+        }
+        if (count === 1) {
+            document.getElementById("addmember").disabled = false;
+            document.getElementById("delmember").disabled = true;
+        }
+        // console.log(count);
+    });
 });
 
 // Gaming:
@@ -316,16 +396,38 @@ $("#pubg").on("click", function () {
     }
     $(".contact100-form-title span").text("Register For PUBG");
 
-    $("#member1").css("display", "block");
-    $("#member2").css("display", "block");
-    $("#member3").css("display", "block");
-    $("#member4").css("display", "block");
-    $("#member5").css("display", "none");
-    $("#member1 #email").prop("required", true);
-    $("#member2 #email").prop("required", true);
-    $("#member3 #email").prop("required", true);
-    $("#member4 #email").prop("required", true);
-    $("#member5 #email").prop("required", false);
+    $("#addmember").on("click", function() {
+      if (count <= events.pubg) {
+        count++;
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "block";
+      }
+      if (count >= 1 && count <= event.pubg) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === events.pubg) {
+        document.getElementById("addmember").disabled = true;
+        document.getElementById("delmember").disabled = false;
+      }
+      // console.log(count);
+    });
+    $("#delmember").on("click", function() {
+      if (count >= 1) {
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "none";
+        count--;
+      }
+      if (count >= 1 && count <= event.pubg) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === 1) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = true;
+      }
+      // console.log(count);
+    });
 });
 
 // mechanical:
@@ -336,16 +438,38 @@ $("#bridgemaking").on("click", function() {
   }
   $(".contact100-form-title span").text("Register For Bridge Making");
 
-  $("#member1").css("display", "block");
-  $("#member2").css("display", "block");
-  $("#member3").css("display", "block");
-  $("#member4").css("display", "none");
-  $("#member5").css("display", "none");
-  $("#member1 #email").prop("required", true);
-  $("#member2 #email").prop("required", true);
-  $("#member3 #email").prop("required", true);
-  $("#member4 #email").prop("required", false);
-  $("#member5 #email").prop("required", false);
+    $("#addmember").on("click", function() {
+      if (count <= events.bridgemaking) {
+        count++;
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "block";
+      }
+      if (count >= 1 && count <= event.bridgemaking) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === events.bridgemaking) {
+        document.getElementById("addmember").disabled = true;
+        document.getElementById("delmember").disabled = false;
+      }
+      // console.log(count);
+    });
+    $("#delmember").on("click", function() {
+      if (count >= 1) {
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "none";
+        count--;
+      }
+      if (count >= 1 && count <= event.bridgemaking) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === 1) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = true;
+      }
+      // console.log(count);
+    });
 });
 
 // Flagship:
@@ -356,16 +480,38 @@ $("#uic").on("click", function () {
     }
     $(".contact100-form-title span").text("Register For UIC");
 
-    $("#member1").css("display", "block");
-    $("#member2").css("display", "block");
-    $("#member3").css("display", "block");
-    $("#member4").css("display", "block");
-    $("#member5").css("display", "block");
-    $("#member1 #email").prop("required", true);
-    $("#member2 #email").prop("required", true);
-    $("#member3 #email").prop("required", true);
-    $("#member4 #email").prop("required", true);
-    $("#member5 #email").prop("required", true);
+    $("#addmember").on("click", function() {
+      if (count <= events.uic) {
+        count++;
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "block";
+      }
+      if (count >= 1 && count <= event.uic) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === events.uic) {
+        document.getElementById("addmember").disabled = true;
+        document.getElementById("delmember").disabled = false;
+      }
+      // console.log(count);
+    });
+    $("#delmember").on("click", function() {
+      if (count >= 1) {
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "none";
+        count--;
+      }
+      if (count >= 1 && count <= event.uic) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === 1) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = true;
+      }
+      // console.log(count);
+    });
 });
 
 // business:
@@ -377,16 +523,38 @@ $("#getsetsell").on("click", function() {
   }
   $(".contact100-form-title span").text("Register For Get Set Sell");
 
-  $("#member1").css("display", "block");
-  $("#member2").css("display", "block");
-  $("#member3").css("display", "block");
-  $("#member4").css("display", "block");
-  $("#member5").css("display", "none");
-  $("#member1 #email").prop("required", true);
-  $("#member2 #email").prop("required", true);
-  $("#member3 #email").prop("required", true);
-  $("#member4 #email").prop("required", true);
-  $("#member5 #email").prop("required", false);
+    $("#addmember").on("click", function() {
+      if (count <= events.getsetsell) {
+        count++;
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "block";
+      }
+      if (count >= 1 && count <= event.getsetsell) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === events.getsetsell) {
+        document.getElementById("addmember").disabled = true;
+        document.getElementById("delmember").disabled = false;
+      }
+      // console.log(count);
+    });
+    $("#delmember").on("click", function() {
+      if (count >= 1) {
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "none";
+        count--;
+      }
+      if (count >= 1 && count <= event.getsetsell) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === 1) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = true;
+      }
+      // console.log(count);
+    });
 });
 
 $("#admaking").on("click", function () {
@@ -396,16 +564,38 @@ $("#admaking").on("click", function () {
     }
     $(".contact100-form-title span").text("Register For Ad making");
 
-    $("#member1").css("display", "block");
-    $("#member2").css("display", "block");
-    $("#member3").css("display", "block");
-    $("#member4").css("display", "block");
-    $("#member5").css("display", "none");
-    $("#member1 #email").prop("required", true);
-    $("#member2 #email").prop("required", true);
-    $("#member3 #email").prop("required", true);
-    $("#member4 #email").prop("required", true);
-    $("#member5 #email").prop("required", false);
+    $("#addmember").on("click", function() {
+      if (count <= events.admaking) {
+        count++;
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "block";
+      }
+      if (count >= 1 && count <= event.admaking) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === events.admaking) {
+        document.getElementById("addmember").disabled = true;
+        document.getElementById("delmember").disabled = false;
+      }
+      // console.log(count);
+    });
+    $("#delmember").on("click", function() {
+      if (count >= 1) {
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "none";
+        count--;
+      }
+      if (count >= 1 && count <= event.admaking) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === 1) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = true;
+      }
+      // console.log(count);
+    });
 });
 
 // misc:
@@ -416,16 +606,38 @@ $("#cluex").on("click", function() {
   }
   $(".contact100-form-title span").text("Register For ClueX");
 
-  $("#member1").css("display", "block");
-  $("#member2").css("display", "block");
-  $("#member3").css("display", "none");
-  $("#member4").css("display", "none");
-  $("#member5").css("display", "none");
-  $("#member1 #email").prop("required", true);
-  $("#member2 #email").prop("required", true);
-  $("#member3 #email").prop("required", false);
-  $("#member4 #email").prop("required", false);
-  $("#member5 #email").prop("required", false);
+    $("#addmember").on("click", function() {
+      if (count <= events.cluex) {
+        count++;
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "block";
+      }
+      if (count >= 1 && count <= event.cluex) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === events.cluex) {
+        document.getElementById("addmember").disabled = true;
+        document.getElementById("delmember").disabled = false;
+      }
+      // console.log(count);
+    });
+    $("#delmember").on("click", function() {
+      if (count >= 1) {
+        idName = "member" + count;
+        document.getElementById(idName).style.display = "none";
+        count--;
+      }
+      if (count >= 1 && count <= event.cluex) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = false;
+      }
+      if (count === 1) {
+        document.getElementById("addmember").disabled = false;
+        document.getElementById("delmember").disabled = true;
+      }
+      // console.log(count);
+    });
 });
 
 
