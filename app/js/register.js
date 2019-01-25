@@ -153,7 +153,7 @@ $("#roborace").on("click", function() {
     }
     $(".contact100-form-title span").text('Register For RoboRace');
 
-    $('#addmember').on('click', function () { 
+    $('#addmember').off().on('click', function () { 
         if (count <= events.roborace) {
             count++;
             idName = "member" + count;
@@ -171,7 +171,7 @@ $("#roborace").on("click", function() {
         
         
     })
-    $('#delmember').on('click', function () {
+    $('#delmember').off().on('click', function () {
         if (count >= 1) {
             idName = "member" + count;
             document.getElementById(idName).style.display = "none";
@@ -197,7 +197,7 @@ $('#robowar').on('click', function () {
     }
     $(".contact100-form-title span").text("Register For RoboWar");
 
-    $('#addmember').on('click', function () {
+    $('#addmember').off().on('click', function () {
         if (count <= events.robowar) {
             count++;
             idName = "member" + count;
@@ -215,7 +215,7 @@ $('#robowar').on('click', function () {
 
 
     })
-    $('#delmember').on('click', function () {
+    $('#delmember').off().on('click', function () {
         if (count >= 1) {
             idName = "member" + count;
             document.getElementById(idName).style.display = "none";
@@ -240,7 +240,7 @@ $("#robosoccer").on("click", function() {
     return;
   }
   $(".contact100-form-title span").text("Register For Robo Soccer");
-    $("#addmember").on("click", function() {
+    $("#addmember").off().on("click", function() {
       if (count <= events.robosoccer) {
         count++;
         idName = "member" + count;
@@ -256,7 +256,7 @@ $("#robosoccer").on("click", function() {
       }
       // console.log(count);
     });
-    $("#delmember").on("click", function() {
+    $("#delmember").off().on("click", function() {
       if (count >= 1) {
         idName = "member" + count;
         document.getElementById(idName).style.display = "none";
@@ -281,7 +281,7 @@ $("#roborumble").on("click", function() {
   }
   $(".contact100-form-title span").text("Register For RoboRumble");
 
-  $("#addmember").on("click", function() {
+  $("#addmember").off().on("click", function() {
     if (count <= events.roborumble) {
       count++;
       idName = "member" + count;
@@ -297,7 +297,7 @@ $("#roborumble").on("click", function() {
     }
     // console.log(count);
   });
-  $("#delmember").on("click", function() {
+  $("#delmember").off().on("click", function() {
     if (count >= 1) {
       idName = "member" + count;
       document.getElementById(idName).style.display = "none";
@@ -323,7 +323,7 @@ $("#coderanch").on("click", function () {
     }
     $(".contact100-form-title span").text('Register For Code Ranch');
 
-    $("#addmember").on("click", function() {
+    $("#addmember").off().on("click", function() {
       if (count <= events.coderanch) {
         count++;
         idName = "member" + count;
@@ -339,7 +339,7 @@ $("#coderanch").on("click", function () {
       }
       // console.log(count);
     });
-    $("#delmember").on("click", function() {
+    $("#delmember").off().on("click", function() {
       if (count >= 1) {
         idName = "member" + count;
         document.getElementById(idName).style.display = "none";
@@ -364,7 +364,7 @@ $("#codegolf").on("click", function() {
   }
   $(".contact100-form-title span").text("Register For Code Golf");
 
-    $("#addmember").on("click", function() {
+    $("#addmember").off().on("click", function() {
       if (count <= events.codegolf) {
         count++;
         idName = "member" + count;
@@ -380,7 +380,7 @@ $("#codegolf").on("click", function() {
       }
       // console.log(count);
     });
-    $("#delmember").on("click", function() {
+    $("#delmember").off().on("click", function() {
       if (count >= 1) {
         idName = "member" + count;
         document.getElementById(idName).style.display = "none";
@@ -405,7 +405,7 @@ $("#spyder").on("click", function() {
   }
     $(".contact100-form-title span").text("Register For Spyder");
     
-    $("#addmember").on("click", function() {
+    $("#addmember").off().on("click", function() {
       if (count <= events.spyder) {
         count++;
         idName = "member" + count;
@@ -421,7 +421,7 @@ $("#spyder").on("click", function() {
       }
       // console.log(count);
     });
-    $("#delmember").on("click", function () {
+    $("#delmember").off().on("click", function () {
         if (count >= 1) {
             idName = "member" + count;
             document.getElementById(idName).style.display = "none";
@@ -448,7 +448,7 @@ $("#pubg").on("click", function () {
     }
     $(".contact100-form-title span").text("Register For PUBG");
 
-    $("#addmember").on("click", function() {
+    $("#addmember").off().on("click", function() {
       if (count <= events.pubg) {
         count++;
         idName = "member" + count;
@@ -464,7 +464,7 @@ $("#pubg").on("click", function () {
       }
       // console.log(count);
     });
-    $("#delmember").on("click", function() {
+    $("#delmember").off().on("click", function() {
       if (count >= 1) {
         idName = "member" + count;
         document.getElementById(idName).style.display = "none";
@@ -490,7 +490,7 @@ $("#bridgemaking").on("click", function() {
   }
   $(".contact100-form-title span").text("Register For Bridge Making");
 
-    $("#addmember").on("click", function() {
+    $("#addmember").off().on("click", function() {
       if (count <= events.bridgemaking) {
         count++;
         idName = "member" + count;
@@ -506,7 +506,7 @@ $("#bridgemaking").on("click", function() {
       }
       // console.log(count);
     });
-    $("#delmember").on("click", function() {
+    $("#delmember").off().on("click", function() {
       if (count >= 1) {
         idName = "member" + count;
         document.getElementById(idName).style.display = "none";
@@ -532,7 +532,7 @@ $("#uic").on("click", function () {
     }
     $(".contact100-form-title span").text("Register For UIC");
 
-    $("#addmember").on("click", function() {
+    $("#addmember").off().on("click", function() {
       if (count <= events.uic) {
         count++;
         idName = "member" + count;
@@ -548,7 +548,7 @@ $("#uic").on("click", function () {
       }
       // console.log(count);
     });
-    $("#delmember").on("click", function() {
+    $("#delmember").off().on("click", function() {
       if (count >= 1) {
         idName = "member" + count;
         document.getElementById(idName).style.display = "none";
@@ -575,7 +575,7 @@ $("#getsetsell").on("click", function() {
   }
   $(".contact100-form-title span").text("Register For Get Set Sell");
 
-    $("#addmember").on("click", function() {
+    $("#addmember").off().on("click", function() {
       if (count <= events.getsetsell) {
         count++;
         idName = "member" + count;
@@ -591,7 +591,7 @@ $("#getsetsell").on("click", function() {
       }
       // console.log(count);
     });
-    $("#delmember").on("click", function() {
+    $("#delmember").off().on("click", function() {
       if (count >= 1) {
         idName = "member" + count;
         document.getElementById(idName).style.display = "none";
@@ -616,7 +616,7 @@ $("#admaking").on("click", function () {
     }
     $(".contact100-form-title span").text("Register For Ad making");
 
-    $("#addmember").on("click", function() {
+    $("#addmember").off().on("click", function() {
       if (count <= events.admaking) {
         count++;
         idName = "member" + count;
@@ -632,7 +632,7 @@ $("#admaking").on("click", function () {
       }
       // console.log(count);
     });
-    $("#delmember").on("click", function() {
+    $("#delmember").off().on("click", function() {
       if (count >= 1) {
         idName = "member" + count;
         document.getElementById(idName).style.display = "none";
@@ -658,7 +658,7 @@ $("#cluex").on("click", function() {
   }
   $(".contact100-form-title span").text("Register For ClueX");
 
-    $("#addmember").on("click", function() {
+    $("#addmember").off().on("click", function() {
       if (count <= events.cluex) {
         count++;
         idName = "member" + count;
@@ -674,7 +674,7 @@ $("#cluex").on("click", function() {
       }
       // console.log(count);
     });
-    $("#delmember").on("click", function() {
+    $("#delmember").off().on("click", function() {
       if (count >= 1) {
         idName = "member" + count;
         document.getElementById(idName).style.display = "none";
